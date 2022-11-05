@@ -1,0 +1,9 @@
+<!-- Busca o produto na base -->
+<form name="buscar" method="POST" action="estoque.php?busca=" class="conta">
+	<fieldset>
+	   <legend>Buscar Produtos Cadastrados</legend>
+      <input type="search" name="busca" class="texto"/>
+      <input type="submit" name="btn_busca" value="" class="btn_find"/>
+      <input type="reset" class="btn_clean" value="" />
+   </fieldset>
+</form>

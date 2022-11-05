@@ -1,0 +1,63 @@
+<!-- Form para Modificar e Adicionar Produto no BD -->
+
+<form name="produtos" method="POST" enctype="multipart/form-data" action="editar.php?editar=<?php echo $p[0]->produtoID ?>">
+   <fieldset class="cad">
+   	<fieldset>
+      	<legend>Alteraração de Produtos</legend>
+
+               <!-- Value em branco se estiver adicionando produto, sei lá, tá travado! -->
+               <?php
+               if(isset($erro))
+                  echo '<p>'.$erro.'</p>';
+                  ?>
+               <ul>
+                  <li class="ids">
+                     <label for="pid">ID</label>
+                     <input type="text" size="5" maxlength="5" id="pid" readonly="readyonly" value="<?php echo $p[0]->produtoID ?>" name="txt_produtoid">
+                  </li>
+               </ul>
+               <ul>
+                  <li>
+                     <label for="nomeprod">Nome Curto do Produto</label>
+                     <input type="text" size="60" maxlength="128" value="<?php echo  $p[0]->nome?>" id="nomeprod" name="txt_nome">
+                  </li>
+                  <li>
+                     <label for="categoria">Categoria</label>
+                     <!-- Apenas cópia em ordem alfabética da ideia genial do protótipo, + 1 porcaria pra ter estilo -->
+                     <select id="categoria" name="txt_categoria">
+                        <option <?php if(strcmp($p[0]->categoria,"Acessórios")==0) echo "selected"?> value="Acessórios">Acessórios</option>
+                        <option <?php if(strcmp($p[0]->categoria,"Console & Jogos")==0) echo "selected"?> value="Console & Jogos">Console & Jogos</option>
+                        <option <?php if(strcmp($p[0]->categoria,"Eletrônicos")==0) echo "selected"?> value="Eletrônicos">Eletrônicos</option>
+                        <option <?php if(strcmp($p[0]->categoria,"Fotografia & Vídeo")==0) echo "selected"?> value="Fotografia & Vídeo">Fotografia & Vídeo</option>
+                        <option <?php if(strcmp($p[0]->categoria,"Informática")==0) echo "selected"?> value="Informática">Informática</option>
+                        <option <?php if(strcmp($p[0]->categoria,"Telefonia")==0) echo "selected"?> value="Telefonia">Telefonia</option>
+                     </select>
+                  </li>
+               </ul>
+               <ul>
+                  <li>
+                     <label for="descricao">Descrição do Produto</label>
+                     <input type="text" size="" maxlength="" value="<?php echo $p[0]->descricao?>" id="descricao" name="txt_descricao">
+                  </li>
+               </ul>
+               <ul>
+                  <li>
+                     <label for="valor">Preço Venda (R$)</label>
+                     <input type="text" size="10" maxlength="10" value="<?php echo  number_format($p[0]->valorVenda,2,",",".") ;?>" id="valor" name="txt_valorvenda">
+                  </li>
+                  <li>
+                     <label for="peso">Peso (kg)</label>
+                     <input type="text" size="5" value="<?php echo number_format($p[0]->peso,3,",",".") ?>" maxlength="5" id="peso"  name="txt_peso">
+                  </li>
+                   <li>
+                     <label for="imagem">Imagem do Produto</label>
+                     <input type="file" id="imagem"  value="<?php echo "https://$_SERVER[HTTP_HOST]/gerenciador/produto/".$p[0]->imagem;?>" name="pic" accept="image/*">
+                     <img style="height:10%;width:10%" src="<?php echo "https://$_SERVER[HTTP_HOST]/gerenciador/produto/".$p[0]->imagem;?>" alt="">
+                  </li>
+               </ul>
+               <div class="btn_centro">
+               <input type="submit" value="SALVAR" name="salvar" class="btn">
+               </div>
+         </fieldset>
+	</fieldset>
+</form>

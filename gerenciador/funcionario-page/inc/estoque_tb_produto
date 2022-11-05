@@ -1,0 +1,57 @@
+<table class="exibirdados">
+   <caption>Produtos Cadastrados</caption>
+   <thead>
+      <tr>
+         <th class="ids">ID</th>
+         <th class="nome">Nome do Produto</th>
+         <th class="valor">Preço (R$)</th>
+         <th class="ids">Qtde.</th>
+         <th class="admin">Administrar</th>
+      </tr>
+   </thead>
+   <tbody>
+
+      <?php
+      $atual =0;
+      if(isset($res)){
+         $qtdProdutos=count($res);
+         while($atual<$qtdProdutos){
+      ?>
+      <tr>
+         <td><?php echo $res[$atual]->produtoID; ?></td>
+         <td><?php echo $res[$atual]->nome; ?></td>
+         <td><?php echo number_format($res[$atual]->valorVenda,2,",",".") ; ?></td>
+         <td><?php echo  $controleProduto->disponibilidadeProduto($res[$atual]->produtoID) ?></td>
+         <td>
+            <a href="entrada.php?excluir=<?php echo $res[$atual]->produtoID; ?>">
+               <img src="img/edit-delete.png" alt="Excluir" />
+            </a>
+            <a href="editar.php?editar=<?php echo $res[$atual]->produtoID; ?>">
+               <img src="img/edit.png" alt="Editar" />
+            </a>
+            <a href="entrada.php?inserir=<?php echo $res[$atual]->produtoID; ?>">
+               <img src="img/edit-add.png" alt="Adicionar" />
+            </a>
+         </td>
+      </tr>
+      <?php
+         $atual++;
+         }
+      }
+      ?>
+   </tbody>
+   <tfoot>
+      <tr>
+         <td colspan="5">
+            <img src="img/edit-delete.png" alt="" />Excluir produto&nbsp;&nbsp;
+            <img src="img/edit.png" alt="" />Modificar produto&nbsp;&nbsp;
+            <img src="img/edit-add.png" alt="" />Adicionar quantidade em estoque.
+         </td>
+      </tr>
+      <tr>
+         <td colspan="5">
+            Não encontrou o produto,<b><a href="produto.php"> clique aqui para adicionar Novo Produto ao Cadastro</a></b>.
+         </td>
+      </tr>
+   </tfoot>
+</table>

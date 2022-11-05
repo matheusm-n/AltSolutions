@@ -1,0 +1,56 @@
+<!-- Form para inserir Produto no Estoque pela NF -->
+
+<form action="entrada2.php?nf" method="POST">
+   <fieldset class="cad">
+      <legend>Adicionar Quantidade de Produto ao Estoque</legend>
+      <?php if(isset($res)) echo $res?>
+      <fieldset>
+         <legend>Identificação do Fornecedor</legend>
+         <ul>
+            <li>
+               <label for="fid">Código:</label>
+               <input type="text" size="5" maxlength="5" id="fid" readonly="readonly" value="<?php if(isset($forn[0])) echo $forn[0]->fornecedorID; ?>" name="txt_fornecedorid" >
+            </li>
+         </ul>
+         <ul>
+            <li>
+               <label for="cnpj">CNPJ:</label>
+               <input type="text" size="14" id="cnpj" maxlength="14" readonly="readonly" value="<?php if(isset($forn[0])) echo $forn[0]->cnpj;  ?>" name="txt_cnpj">
+            </li>
+            <li>
+               <label for="nome">Razão Social:</label>
+               <input type="text" size="40" id="nome" maxlength="40" readonly="readonly" value="<?php if(isset($forn[0])) echo $forn[0]->nome; ?>" name="txt_nome">
+            </li>
+         </ul>
+      </fieldset>
+      <fieldset>
+         <legend>Informações do Produto</legend>
+         <ul>
+            <li>
+               <label for="pid">ID:</label>
+               <input type="text" size="5" maxlength="5" id="pid" readonly="readonly" value="<?php if(isset($prod[0])) echo $prod[0]->produtoID; ?>" name="txt_produtoidid" >
+            </li>
+            <li>
+               <label for="nomep">Nome:</label>
+               <!-- CUIDADO, TEMOS NOME 2 VEZES (Fornecedor e Produto pra retornar do BD) -->
+               <input type="text" size="20" maxlength="20" id="nomep" readonly="readonly" value="<?php if(isset($prod[0])) echo $prod[0]->nome; ?>" name="txt_nome_prod">
+            </li>
+         </ul>
+         <ul>
+            <li>
+               <label for="nfe">NF Entrada</label>
+               <input type="text" required size="20" maxlength="20" id="nfe" name="txt_numeronf">
+            </li>
+            <li>
+               <label for="qtde">Qtde.</label>
+               <input type="text" required size="5" maxlength="5" id="qtde" name="txt_qtdenf">
+            </li>
+            <li>
+               <label for="compra">Valor (R$)</label>
+               <input type="text" required size="10" maxlength="10" id="compra" name="txt_valorprod">
+               <input type="submit" value="SALVAR"  name="salvar" class="btn">
+            </li>
+         </ul>
+      </fieldset>
+   </fieldset>
+</form>

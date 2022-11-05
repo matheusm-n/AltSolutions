@@ -1,0 +1,105 @@
+@charset "utf-8";
+@font-face {
+font-family: Muli;
+src: url('css/Muli-Regular.ttf');
+}
+
+/* Reset */
+* {margin:0 auto; padding:0; border:0;}
+
+/* Define Fontes Gerais*/
+* {font-family: Muli;color: silver;}
+b, strong, h1, h2, h3 {font-weight: bolder;}
+i, span {font-style: italic;}
+
+/*Formatação geral */
+body {background-color:#000; font-size:14px;}
+.fundo {margin:10px; background-color:#151515; border-radius:10px;}
+header {text-align:center;}
+h1, h2, h3 {color:#bb6020;font-variant:small-caps;text-align: center;}
+h1{font-size:24px;}
+h2{font-size: 20px;}
+h3{font-size: 16px;}
+a {text-decoration:none;}
+ol,ul {list-style-type:none;}
+
+/* Login do Gerenciador ================================================================================*/
+#adm {text-align:center;width:320px;}
+#adm img {width:300px;height:300px;}
+#login {text-align:center;max-width:320px;margin-top:50px;}
+#login p {padding-left:10px; text-align:left;}
+.text-login {margin:5px 0 15px;float:left;padding:10px;background-color:#000; border-radius:10px;width:300px;}
+.btn_login {margin-bottom:25px;text-align:center;border-radius:10px;background-color:#000;color:#bb6020;padding:5px 10px;margin: 1em 2em;}
+
+/* Header do Gerenciador */
+#gerenciador {height:90px;padding:5px;width:100%;}
+.logo {float:left;margin: 5px;width: 140px; height: 70px;}
+#gerenciador h1 {display:inline-block; padding:1em 0;}
+#controle {float: right; padding: 0 30px;}
+#controle img {padding: 22px 10px;}
+
+/* Menu Lateral do Gerenciador */
+#lateral {display:inline; float:left;text-align:center;padding: 0 5px;font-weight: bold;}
+.menu, .menucont {margin:5px; border-radius:5px;padding:5px;}
+.menucont {border:1px groove silver;color:#bb6020;}
+.menu {background-color: black;}
+
+/* Contêiner do Gerenciador */
+#conteudo {display:block;min-height: 350px;width:100%; 0 10px 10px 10px;}
+
+/* Tabelas de Exibição de Dados ========================================================================*/
+caption {padding: 1em 0 0.4em 0; color: #bb6020;}
+th {padding: 0.4em 0;text-align: left;}
+caption, th {font-size: 16px;font-weight: bold;}
+tfoot {text-align: center;font-style: italic;}
+.exibirdados{border-collapse: collapse; max-width: 850px; margin: 2em auto;}
+.exibirdados tbody td{border:1px solid silver;}
+.exibirdados th, .exibirdados td {padding: 5px 10px;}
+.exibirdados img {width: 20px; height: 20px;margin: 0 5px;}
+.exibirdados tr:nth-child(even) {background: #303030; }
+.exibirdados tfoot a {color: #bb6020; }
+.ids {width: 3em;}
+.nome {min-width:14em; max-width: 20em;}
+.data, .valor {width: 6em;}
+.admin {width: 100px;text-align: center;}
+
+/*Ajustes na tabela Controle de Contas*/
+.funccpf {width: 7em;}
+/*Tabela Pedidos*/
+.nfsaida{width: 5em;padding:5px 10px; border-radius: 5px; background: black;}
+/*Tabela Relatório Vendas*/
+#vendas th, #vendas td {text-align: center;}
+#vendas td:first-child, #vendas td:last-child {font-weight: bold;color: #bb6020;}
+
+/* Formulários =========================================================================================*/
+.btn {color: #bb6020;border-radius: 10px;font-weight: bold;}
+.btn, .texto {margin: 0.4em;background-color: black; padding: 3px 10px;}
+.btn_find {background: url(img/find.png) no-repeat center center; width: 20px;height: 20px;}
+.btn_clean {background: url(img/edit-clear.png) no-repeat center center; width: 20px; height: 20px;}
+.btn_centro {text-align: center;}
+.conta legend, .cad legend {font-size: 16px; font-weight:bold; padding: 0.4em;}
+.conta label, .cad label {display: block;}
+
+
+/* Login e Gerenciador de Contas*/
+.texto {border-radius:10px;width: 200px;}
+.conta {text-align:center;width: 400px;}
+.conta label {margin-left: 120px;text-align: left;}
+.chk {margin: 10px 5px 10px 20px;}
+
+/*Cadastros */
+.cad {width: 800px; background: black; border-radius: 10px;padding: 10px;}
+.cad fieldset {background: #151515;border-radius: 10px;}
+.cad label {margin-left: 5px;}
+.cad li {display: inline-block;margin: 10px;}
+.cad input[type="text"], .cad input[type="email"], .cad select {border-radius: 5px; background:black;padding:2px 10px;}
+.cad input[type="file"]::file-selector-button {color: #bb6020; background: black; padding: 3px 10px; border:0; border-radius:10px; }
+
+/* Restrição de Viewport para responsividade */
+@media all and (max-width:1200px){
+#lateral, #conteudo {display: none;}
+#aviso {display: block;}
+}
+@media all and (min-width:1201px){
+#aviso {display: none;}
+}

@@ -1,0 +1,10 @@
+<!-- Form Buscar Fornecedores -->
+<form class="conta" name="buscar" method="POST" action="entrada.php?busca=">
+   <fieldset>
+      <legend>Buscar Fornecedores Cadastrados</legend>
+      
+      <input type="search" name="busca" class="texto"/>
+      <input type="submit" name="btn_busca" value="" class="btn_find"/>
+      <input type="reset" class="btn_clean" value="" />
+   </fieldset>
+</form>

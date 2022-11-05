@@ -1,0 +1,8 @@
+ <!-- Funcionário com acesso ao Estoque (estoque=1) -->
+               <li class="menucont">
+                  Acesso Especial
+                  <ul>
+                     <li class="menu"><a href="estoque.php" target="_self">Produtos e Estoque</a></li>
+                  </ul>
+               </li>
+               <!-- Fim Estoque -->

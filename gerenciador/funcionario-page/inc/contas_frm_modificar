@@ -1,0 +1,11 @@
+<!-- Exibe durante Administração de determinada Conta -->
+
+<form action="contas2.php?atualizar=<?php  if(isset($f[0])) echo $f[0]->idFunc ?>" method="POST" class="conta">
+    <fieldset>
+        <legend>Permissões da Conta ID <?php if(isset($f[0])) echo $f[0]->idFunc ?></legend>
+        <input type="checkbox" <?php if(isset($f[0])) echo ($f[0]->admContas?"checked":"")?> name="adm" class="chk" />Adm. Contas
+        <input type="checkbox" <?php if(isset($f[0])) echo ($f[0]->estoque?"checked":"")?> name="estoque" class="chk" />Estoque
+        <input type="checkbox" <?php if(isset($f[0])) echo ($f[0]->relatTotal?"checked":"")?> name="relatorio" class="chk" />Relatórios
+        <input type="submit" value="ATUALIZAR" name="atualizar" class="btn">
+    </fieldset>
+</form>

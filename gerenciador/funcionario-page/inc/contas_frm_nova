@@ -1,0 +1,24 @@
+<!-- Form de Novas Contas -->
+
+<form method="POST" class="conta">
+   <fieldset>
+     <legend>Adicionar Nova Conta</legend>
+     <?php if(isset($erro)) echo $erro ?>
+     <label for="fcpf">CPF do funcionário:</label>
+     <input type="text" size="20" id="fcpf" class="texto" required name="txt_cpf" >
+     <br/>
+     <label for="nome">Nome do funcionário:</label>
+     <input type="text" size="20" id="nome" class="texto" required name="txt_nome">
+     <br />
+   </fieldset>
+   <fieldset>
+     <legend>Permissões da nova conta</legend>
+     <input type="checkbox" class="chk" name="adm"/>Adm. Contas
+     <input type="checkbox" class="chk"  name="estoque"/>Estoque
+     <input type="checkbox"  class="chk" name="relatorio"/>Relatórios
+     <br/>
+   </fieldset>
+   <input type="reset" value="LIMPAR" class="btn">
+   <input type="submit" value="SALVAR" action="contas3.php"  class="btn" name="btn_salvar">
+   <input type="submit" value="VOLTAR" formaction="contas2.php" class="btn" formnovalidate>
+</form>

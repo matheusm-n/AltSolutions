@@ -1,0 +1,48 @@
+<!-- Resultado pesquisa Fornecedores -->
+<table class="exibirdados">
+   <caption>Forncedores Localizados</caption>
+   <thead>
+      <tr>
+         <th class="ids">Código</th>
+         <th class="funccpf">CNPJ</th>
+         <th class="nome">Nome</th>
+         <th class="ids"></th>
+      </tr>
+   </thead>
+   <tbody>
+      <?php
+         $atual =0;
+         if(isset($res)){
+            $qtdFornecedor=count($res);
+         while($atual<$qtdFornecedor){
+      ?>
+      <tr>
+         <td><?php echo $res[$atual]->fornecedorID ?></td>
+         <td><?php echo $res[$atual]->cnpj ?></td>
+         <td><?php echo $res[$atual]->nome ?></td>
+         <td>
+            <a href="entrada2.php?incluir=<?php if(isset($prod)) echo $prod ?>&f=<?php echo $res[$atual]->fornecedorID ?>">
+            <!-- Não me pergunta como o script faz isso aí encima -->
+               <img src="img/confirmar.png" alt="" />
+            </a>
+         </td>
+      </tr>
+      <?php
+            $atual++;
+         }
+      }
+      ?>
+   </tbody>
+   <tfoot>
+      <tr>
+         <td colspan="4">
+            <img src="img/confirmar.png" alt="" />Insere nova NF de entrada para produto do fornecedor
+         </td>
+      </tr>
+      <tr>
+         <td colspan="5">
+            Não encontrou o fornecedor,<b><a href="fornecedor.php"> clique aqui para adicionar Novo Fornecedor ao Cadastro</a></b>.
+         </td>
+      </tr>
+   </tfoot>
+</table>

@@ -1,0 +1,8 @@
+<!-- Trecho apenas para Administrador -->
+<br/>
+<a href="contas2.php?adm" target="_self">
+  <img src="img/adm_contas.png" alt="Administrar Contas" />Administrar Contas
+</a>
+<br/>
+
+<!-- Fim do trecho Administrador -->

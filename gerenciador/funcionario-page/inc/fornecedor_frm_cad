@@ -1,0 +1,89 @@
+<!-- Form para Modificar e Adicionar Fornecedores -->
+
+<form method="POST" >
+   <fieldset class="cad">
+      <legend>Cadastro de Fornecedores</legend>
+      <?php
+               if(isset($erro))
+                  echo '<p>'.$erro.'</p>';
+                  ?>
+      <fieldset>
+         <legend>Identificação</legend>
+         <ul>
+            <li>
+               <label for="fid">Código:</label>
+               <input type="text" size="5" id="fid" readonly="readonly" value="<?php if(isset($f)) echo $f->fornecedorID ?>" name="txt_fornecedorid">
+            </li>
+         </ul>
+         <ul>
+            <li>
+               <label for="cnpj">CNPJ:</label>
+               <input type="text" size="14" maxlength="14" id="cnpj" value="<?php if(isset($f)) echo $f->cnpj ?>" name="txt_cnpj">
+            </li>
+            <li>
+               <label for="nome">Razão Social:</label>
+               <input type="text" size="40" maxlength="60" id="nome" value="<?php if(isset($f)) echo $f->nome ?>" name="txt_nome">
+            </li>
+         </ul>
+      </fieldset>
+      <fieldset>
+         <legend>Endereço</legend>
+         <ul>
+            <li>
+               <label for="cep">CEP</label>
+               <input type="text" id="cep" maxlength="9" size="9" value="<?php if(isset($f)) echo $f->endereco->cep ?>" name="txt_cep">
+               <input type="submit" class="btn_find" value="" name="btn_busca" formaction="fornecedor.php?busca=" />
+            </li>
+         </ul>
+         <ul>
+            <li>
+               <label for="endereco">Endereço</label>
+               <input type="text" id="endereco" maxlength="40" size="40" readonly="readonly" value="<?php if(isset($f)) echo $f->endereco->endereco ?>" name="txt_endereco">
+            </li>
+            <li>
+               <label for="num">Número</label>
+               <input type="text" id="num" size="5" maxlength="5" value="<?php if(isset($f)) echo $f->endereco->num ?>" name="txt_num">
+            </li>
+            <li>
+               <label for="comp">Complemento</label>
+               <input type="text" maxlength="20" id="comp" value="<?php if(isset($f)) echo $f->endereco->complemento ?>" size="20" name="txt_complemento">
+            </li>
+            <li>
+               <label for="bairro">Bairro</label>
+               <input type="text" id="bairro" maxlength="35" size="35" readonly="readonly" value="<?php if(isset($f)) echo $f->endereco->bairro ?>" name="txt_bairro">
+            </li>
+            <li>
+               <label for="cidade">Cidade</label>
+               <input type="text" id="cidade" maxlength="35" size="35" readonly="readonly" value="<?php if(isset($f)) echo $f->endereco->cidade ?>" name="txt_cidade">
+            </li>
+            <li class="ids">
+               <label for="uf">UF</label>
+               <input type="text" id="uf" maxlength="2" size="2" readonly="readonly" value="<?php if(isset($f)) echo $f->endereco->uf ?>" name="txt_uf">
+            </li>
+         </ul>
+      </fieldset>
+      <fieldset>
+         <legend>Informações de Contato</legend>
+         <ul>
+            <li>
+               <label for="fone">Telefone</label>
+               <input type="text" id="fone" maxlength="11" size="11" value="<?php if(isset($f)) echo $f->telefone ?>" name="txt_telefone">
+            </li>
+            <li class="tam20">
+               <label for="mail">E-mail</label>
+               <input type="email" id="mail" maxlength="256" size="30" value="<?php if(isset($f)) echo $f->email ?>" name="txt_email">
+            </li>
+            <li class="tam20">
+               <label for="site">Site Web</label>
+               <input type="text" id="site" maxlength="256" size="20" value="<?php if(isset($f)) echo $f->site ?>" name="txt_site">
+            </li>
+         </ul>
+      </fieldset>
+      <div class="btn_centro">
+      <input type="reset" value="LIMPAR" class="btn">
+      <input type="submit" value="SALVAR" formaction="fornecedor.php" name="salvar" class="btn">
+      <!-- Botão voltar em formaction simplesmente manda pra outra página -->
+      <input type="submit" value="VOLTAR" formaction="estoque.php" class="btn" formnovalidate>
+      </div>
+   </fieldset>
+</form>

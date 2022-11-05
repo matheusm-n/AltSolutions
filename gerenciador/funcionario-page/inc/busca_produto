@@ -1,0 +1,9 @@
+<!-- Formulário de busca padrão de produtos -->
+
+<form name="buscar" method="post" action="gerenciador.php?busca=" class="conta" id="buscar">
+   <fieldset>
+      <legend>Buscar Produtos Cadastrados</legend>
+      <input type="search" name="busca" class="texto">
+      <input type="submit" name="btn_busca" value="" class="btn_find">
+      <input type="reset" class="btn_clean" value=""></fieldset>
+</form>

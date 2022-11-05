@@ -1,0 +1,15 @@
+<!-- Administração de Contas Form Busca -->
+
+<form name="buscar" method="POST" action="contas2.php?busca=" class="conta">
+   <fieldset>
+      <legend>Buscar Contas de Funcionários Cadastrados</legend>
+      
+      <input type="search" name="busca" class="texto"/>
+      <input type="submit" name="btn_busca" value="<?php ?>" class="btn_find"/>
+      <input type="reset" class="btn_clean" value="<?php ?>" />
+   </fieldset>
+   <br/>
+   <a href="contas3.php?nova" target="_self">
+      <img src="img/user-plus.png" alt="Novo Funcionário" />Novo Usuário
+   </a>
+</form>

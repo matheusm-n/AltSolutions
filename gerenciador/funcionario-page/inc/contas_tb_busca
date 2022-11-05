@@ -1,0 +1,59 @@
+<!-- Exibir ao Solicitar Busca por Contas -->
+<table class="exibirdados">
+   <caption>Contas de Funcionários Localizadas</caption>
+      <thead>
+        <tr>
+	        <th class="ids">ID</th>
+	        <th class="funccpf">CPF</th>
+	        <th class="nome">Nome do Funcionário</th>
+	        <th class="admin">Administrar</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <!-- Retorno do BD -->
+      <?php
+      $atual =0;
+      if(isset($res)){
+         $qtdContas=count($res);
+         while($atual<$qtdContas){
+            if($res[$atual]->idFunc==0){
+               $atual++;
+               continue;
+            }
+      ?>
+         <tr>
+	         <td><?php echo $res[$atual]->idFunc ?></td>
+	         <td><?php echo $res[$atual]->cpfFunc ?></td>
+	         <td><?php echo $res[$atual]->nomeFunc ?></td>
+	         <!-- repete sempre -->
+	         <td class="adminfunc">
+	           <a href="contas2.php?edit=<?php echo $res[$atual]->idFunc ?>" target="_self">
+	              <img src="img/edit.png" alt="Editar" />
+	           </a>
+	           <a href="contas2.php?redefinir=<?php echo $res[$atual]->idFunc ?>" target="_self">
+                 <img src="img/edit-undo.png" alt="Redefinir" />
+	           </a>
+	           <a href="contas2.php?excluir=<?php echo $res[$atual]->idFunc ?>" target="_self">
+	           	  <img src="img/edit-delete.png" alt="Excluir" />
+	           </a>
+	         </td>
+         </tr>
+         <?php
+         $atual++;
+         }
+       }
+      ?>
+      <!-- Fim BD -->
+      </tbody>
+
+      <tfoot>
+         <tr>
+            <td colspan="4">
+               <img src="img/edit.png" alt="Editar" />Editar permissões&nbsp;
+               <img src="img/edit-undo.png" alt="Redefinir" />Redefinir senha&nbsp;
+               <img src="img/edit-delete.png" alt="Excluir" />Excluir conta
+            </td>
+         </tr>
+      </tfoot>
+</table>

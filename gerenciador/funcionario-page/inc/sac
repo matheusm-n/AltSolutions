@@ -1,0 +1,41 @@
+<?php
+   require "busca_produto";
+?>
+
+<table class="exibirdados">
+   <caption>Produtos Cadastrados</caption>
+   <thead>
+      <tr>
+         <th class="ids">ID</th>
+         <th class="nome">Nome do Produto</th>
+         <th class="valor">Preço (R$)</th>
+         <th class="ids">Qtde.</th>
+      </tr>
+   </thead>
+   <tbody>
+   <?php
+      $atual =0;
+      if(isset($res)){
+         $qtdProdutos=count($res);
+         while($atual<$qtdProdutos){
+      ?>
+      <tr>
+         <td><?php echo $res[$atual]->produtoID ?></td>
+         <td><?php echo $res[$atual]->nome ?></td>
+         <td><?php echo  number_format($res[$atual]->valorVenda,2,",","."); ?></td>
+         <td><?php echo  $cp->disponibilidadeProduto($res[$atual]->produtoID) ?></td>
+      </tr>
+      <?php
+         $atual++;
+         }
+      }
+      ?>
+   </tbody>
+   <tfoot>
+      <tr>
+         <td colspan="4">Conteúdo gerado para simples verificação pelo SAC, apenas funcionários autorizados podem manipular o Estoque.</td>
+      </tr>
+   </tfoot>
+</table>
+<br>
+

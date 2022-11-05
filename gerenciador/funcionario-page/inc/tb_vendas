@@ -1,0 +1,72 @@
+<!-- Relatório Consolidado de Vendas -->
+
+<h2>Relatório Consolidado de Vendas</h2>
+
+<table class="exibirdados" id="vendas">
+   <caption>Pedidos - Consolidado</caption>
+   <thead>
+      <tr>
+         <th></th>
+         <th class="ids">Qtde.</th>
+         <th class="valor">Valor (R$)</th>
+         <th class="valor">Participação</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Concluídos</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>Cancelados</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>Realizados</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+   </tbody>
+</table>
+
+<table class="exibirdados">
+   <caption>Produtos mais vendidos</caption>
+   <thead>
+      <tr>
+         <th class="ids">ID</th>
+         <th class="nome">Nome</th>
+         <th class="ids">Qtde.</th>
+         <th class="valor">Valor (R$)</th>
+         <th class="valor">Participação</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+      <!-- Manipulação via laço, com 10 registros de retorno -->
+         <td>produtoid</td>
+         <td>nomeProduto</td>
+         <td>(quantidade)</td>
+         <td>(soma em R$)</td>
+         <td>(% em relação ao total)</td>
+         <!-- Fim laço -->
+      </tr>
+      <tr>
+         <td colspan="2">Total 10 produtos mais vendidos</td>
+         <td>(soma quantide dos 10+)</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td colspan="2">Total de produtos vendidos</td>
+         <td>(soma quantidade de todos)</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </tbody>
+</table>
+

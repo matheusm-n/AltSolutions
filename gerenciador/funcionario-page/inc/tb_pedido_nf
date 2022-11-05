@@ -1,0 +1,37 @@
+<!-- Tabela Pedidos Aguardando Nota Fiscal de Saída, valores entre parênteses são calculados -->
+<table class="exibirdados">
+   <caption>Pedidos Aguardando Nota Fiscal</caption>
+      <thead>
+         <tr>
+            <th class="ids">Num.</th>
+            <th class="data">Pagamento</th>
+            <th class="valor">Valor (R$)</th>
+            <th class="nf">NF Saída</th>
+         </tr>
+      </thead>
+      <tbody>
+<!-- Manipulado via PHP -->
+         <tr>
+            <td>pedidoID</td>
+            <td>processamento</td>
+            <td>(valorPedido)</td>
+            <!-- Repetição, entrada do número de NF de saída pelo Funcionário -->
+            <td>
+               <input type="text" size="6" name="nfsaida" class="nfsaida" />
+               <a href="gravarpedido" target="_self" title="Processar Pedido">
+                  <img src="img/confirmar.png" alt="processar" />
+               </a>
+            </td>
+         </tr>
+         <!-- Fim da manipulação -->
+      </tbody>
+      <tfoot>
+         <tr>
+            <td colspan="4">
+               <img src="img/confirmar.png" alt="confirmar" />Confirma NF Saída e Processa Pedido
+            </td>
+         </tr>
+      </tfoot>
+</table>
+
+

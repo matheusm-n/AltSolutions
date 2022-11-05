@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="gerenciador.css" />
+<title>Gerenciador do Negócio AltSolutions</title>
+</head>
+<body>
+   <div class="fundo">
+      <header id="gerenciador">
+         <img class="logo" src="img/logo-header.png" alt="Logo AltSolutions" />
+         <h1>Gerenciador do Negócio</h1>
+         <div id="controle">
+            <a href="contas.php" target="_self" title="Sua Conta">
+               <img src="img/user-info.png" alt="user-info" />
+            </a>
+            <a href="logout.php" target="_self" title="Sair do Sistema">
+                <img src="img/log-out.png" alt="logout" />
+            </a>
+         </div>
+      </header>
+      <div id="lateral">
+         <nav>
+            <ul>
+            <!-- Acesso Universal -->
+               <li class="menucont">
+                  Pedidos
+                  <ul>
+                     <li class="menu"><a href="gerenciador.php?nf" method="GET" target="_self">Aguardando NF</a></li>
+                     <li class="menu"><a href="gerenciador.php?cancelado" method="GET" target="_self">Cancelados</a></li>
+                     <li class="menu"><a href="gerenciador.php?transporte" method="GET" target="_self">Transporte</a></li>
+                  </ul>
+               </li>

@@ -1,0 +1,31 @@
+<!-- Tabela dos Pedidos Cancelados pelos Clientes -->
+<table class="exibirdados">
+   <caption>Relatório de Pedidos Cancelados</caption>
+      <thead>
+         <tr>
+            <th class="ids">Num.</th>
+            <th class="nome">Cliente</th>
+            <th class="valor">Valor (R$)</th>
+            <th class="data">Pago</th>
+            <th class="data">Cancelado</th>
+         </tr>
+      </thead>
+      <tbody>
+      <!-- Manipulado via PHP -->
+         <tr>
+            <td>pedidoid</td>
+            <td>nomeCliente</td>
+            <td>(valorPedido)</td>
+            <td>processamento</td>
+            <td>cancelado</td>
+         </tr>
+         <!-- Fim da manipulação -->
+      </tbody>
+      <tfoot>
+         <tr>
+            <td colspan="5">
+              Relatório para simples conferência e acompanhamento do negócio.
+            </td>
+         </tr>
+      </tfoot>
+</table>

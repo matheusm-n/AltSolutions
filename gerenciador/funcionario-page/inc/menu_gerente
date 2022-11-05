@@ -1,0 +1,6 @@
+<!-- Somente Funcionário na condição de Gerente (relatTotal=1) -->
+               <li class="menucont">Consolidação
+                  <ul>
+                     <li class="menu"><a href="gerenciador.php?venda" method="GET" target="_self">Vendas do mês</a></li>
+                  </ul>
+               </li>

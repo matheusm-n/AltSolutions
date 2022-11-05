@@ -1,0 +1,62 @@
+<!-- Form para Modificar e Adicionar Produto no BD -->
+
+<form name="produtos" method="POST" enctype="multipart/form-data" action="produto.php?insere=">
+   <fieldset class="cad">
+   	<fieldset>
+      	<legend>Cadastro de Produtos</legend>
+
+               <!-- Value em branco se estiver adicionando produto, sei lá, tá travado! -->
+               <?php
+               if(isset($erro))
+                  echo '<p>'.$erro.'</p>';
+                  ?>
+               <ul>
+                  <li class="ids">
+                     <label for="pid">ID</label>
+                     <input type="text" size="5" maxlength="5" id="pid" readonly="readyonly" value="<?php echo $produtoID ?>" name="txt_produtoid">
+                  </li>
+               </ul>
+               <ul>
+                  <li>
+                     <label for="nomeprod">Nome Curto do Produto</label>
+                     <input type="text" size="60" maxlength="128" id="nomeprod" name="txt_nome">
+                  </li>
+                  <li>
+                     <label for="categoria">Categoria</label>
+                     <!-- Apenas cópia em ordem alfabética da ideia genial do protótipo, + 1 porcaria pra ter estilo -->
+                     <select id="categoria" name="txt_categoria">
+                        <option value="Acessórios">Acessórios</option>
+                        <option value="Console & Jogos">Console & Jogos</option>
+                        <option value="Eletrônicos">Eletrônicos</option>
+                        <option value="Fotografia & Vídeo">Fotografia & Vídeo</option>
+                        <option value="Informática">Informática</option>
+                        <option value="Telefonia">Telefonia</option>
+                     </select>
+                  </li>
+               </ul>
+               <ul>
+                  <li>
+                     <label for="descricao">Descrição do Produto</label>
+                     <input type="text" size="" maxlength="" id="descricao" name="txt_descricao">
+                  </li>
+               </ul>
+               <ul>
+                  <li>
+                     <label for="valor">Preço Venda (R$)</label>
+                     <input type="text" size="10" maxlength="10" id="valor" name="txt_valorvenda">
+                  </li>
+                  <li>
+                     <label for="peso">Peso (kg)</label>
+                     <input type="text" size="5" maxlength="5" id="peso" name="txt_peso">
+                  </li>
+                   <li>
+                     <label for="imagem">Imagem do Produto</label>
+                     <input type="file" id="imagem"  name="pic" accept="image/*">
+                  </li>
+               </ul>
+               <div class="btn_centro">
+               <input type="submit" value="SALVAR" name="salvar" class="btn">
+               </div>
+         </fieldset>
+	</fieldset>
+</form>

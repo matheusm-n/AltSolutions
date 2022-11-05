@@ -1,0 +1,22 @@
+<form action="contas.php?ns=" method="POST" class="conta">
+   <fieldset>
+      <?php if(isset($erro)) echo $erro ?>
+     <legend>Usuário <?php echo $nome_usuario; ?></legend>
+     <label for="senha">Senha atual:</label>
+     <input type="password" size="20" id="senha" class="texto" required name="txt_senha">
+     <br/>
+     <label for="nsenha">Nova senha:</label>
+     <input type="password" size="20" id="nsenha" class="texto" required name="txt_nsenha">
+     <br />
+     <label for="rsenha">Repetir nova senha:</label>
+     <input type="password" size="20" id="rsenha" class="texto" required name="txt_rsenha">
+     <br/>
+     <input type="reset" value="LIMPAR" class="btn">
+     <input type="submit" value="SALVAR" name="salvar" class="btn">
+   </fieldset>
+   <?php
+      /* if logado adm */
+      if($admContas == 1)
+         include "contas_adm_link";
+   ?>
+</form>
